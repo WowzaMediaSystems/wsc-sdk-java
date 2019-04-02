@@ -1,0 +1,17 @@
+
+
+# Defensive ignore patterns.
+**/~
+**/.aws
+**/.bash_history
+**/.gem
+**/.mysql_history
+**/.profile
+**/.ssh
+**/.wowza
+**/.wowzacli
+**/credential
+**/credentials
+**/.credential
+**/.credentials
+
