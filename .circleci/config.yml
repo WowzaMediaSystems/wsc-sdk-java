@@ -1,0 +1,162 @@
+version: 2
+
+# The workflows that drive this project
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - build:
+        context: wsc-sdk-java
+        filters:
+          branches:
+            only: /development/
+
+  # test:
+  #   jobs:
+  #     - test-unit-development:
+  #         context: wsc-sdk-ruby
+  #         filters:
+  #           branches:
+  #             ignore: /development/
+
+  #     - test-unit:
+  #         context: wsc-sdk-ruby
+  #         filters:
+  #           tags:
+  #             only: /run\-unit\-tests/
+  #           branches:
+  #             ignore: /.*/
+
+  #     - test-integration:
+  #         context: wsc-sdk-ruby
+  #         filters:
+  #           tags:
+  #             only: /run\-integration\-tests/
+  #           branches:
+  #             ignore: /.*/
+
+  # release:
+  #   jobs:
+  #     - release-production:
+  #         context: wsc-sdk-ruby-publish-staging
+  #         filters:
+  #           tags:
+  #             only: /release/
+  #           branches:
+  #             ignore: /.*/
+
+  # publish:
+  #   jobs:
+  #     - publish-staging:
+  #         context: wsc-sdk-ruby-publish-staging
+  #         filters:
+  #           tags:
+  #             only: /publish-staging/
+  #           branches:
+  #             ignore: /.*/
+
+  #     - publish-production:
+  #         context: wsc-sdk-ruby-publish-production
+  #         filters:
+  #           tags:
+  #             only: /publish-production/
+  #           branches:
+  #             ignore: /.*/
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8u151-jdk-stretch
+    steps:
+      - checkout
+      - run:
+          name: Build job
+          command: ". ./.circleci/jobs/build.sh"
+
+  # release-production:
+
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Build and Deploy (Master)
+  #         command: ". ./.circleci/jobs/release-production.sh"
+
+  # publish-staging:
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Publish Staging Documentation
+  #         command: ". ./.circleci/jobs/publish-staging.sh"
+
+  # publish-production:
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Publish Production Documentation
+  #         command: ". ./.circleci/jobs/publish-production.sh"
+
+  # test-unit:
+
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Run Unit Tests
+  #         command: ". ./.circleci/jobs/test-unit.sh"
+  #     - store_test_results:
+  #         path: test_results
+
+  # test-unit-development:
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Run Unit Tests
+  #         command: ". ./.circleci/jobs/test-unit.sh"
+  #     - store_test_results:
+  #         path: test_results
+
+  # test-integration:
+
+  #   docker:
+  #     - image: quay.io/wowzaprivate/wsc-sdk-ruby-build:0.0.0
+  #       # auth:
+  #       #   username: $DOCKER_REG_USERNAME
+  #       #   password: $DOCKER_REG_PASSWORD
+
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Run Integration Tests
+  #         command: ". ./.circleci/jobs/test-integration.sh"
+  #     - store_test_results:
+  #         path: test_results
