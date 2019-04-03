@@ -4,6 +4,8 @@ echo "build.sh"
 
 . ./.circleci/helpers/debundle-context.sh
 
+. ./.circleci/helpers/setup_git.sh
+
 . ./.circleci/helpers/install-deps.sh
 
 . ./.circleci/helpers/manage-environment-pom.sh
