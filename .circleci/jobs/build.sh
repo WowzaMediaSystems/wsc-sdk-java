@@ -12,5 +12,7 @@ echo "build.sh"
 
 . ./.circleci/helpers/build-release-zip.sh
 
+. ./.circleci/helpers/commit-built-files.sh
+
 echo "build is done!"
 
