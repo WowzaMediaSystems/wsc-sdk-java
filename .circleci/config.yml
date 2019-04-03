@@ -7,7 +7,7 @@ workflows:
   build:
     jobs:
       - build:
-          # context: wsc-sdk-java
+          context: wsc-sdk-ruby
           filters:
             branches:
               only: /development/
