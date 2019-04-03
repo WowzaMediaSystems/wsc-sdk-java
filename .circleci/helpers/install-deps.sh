@@ -2,5 +2,6 @@
 
 echo "install-deps.sh"
 
-apt-get update && sudo apt-get install awscli
+sudo apt-get update
+sudo apt-get install awscli
 
