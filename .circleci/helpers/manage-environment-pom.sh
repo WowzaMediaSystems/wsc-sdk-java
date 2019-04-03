@@ -2,7 +2,9 @@
 
 echo "manage-environment-pom.sh"
 
-pom_location=~/pom.xml
+set
+
+pom_location=~/wsc-java-sdk/pom.xml
 
 echo "Pom location ${pom_location}"
 
