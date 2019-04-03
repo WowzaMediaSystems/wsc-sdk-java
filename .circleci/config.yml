@@ -7,10 +7,10 @@ workflows:
   build:
     jobs:
       - build:
-        context: wsc-sdk-java
-        filters:
-          branches:
-            only: /development/
+          context: wsc-sdk-java
+          filters:
+            branches:
+              only: /development/
 
   # test:
   #   jobs:
