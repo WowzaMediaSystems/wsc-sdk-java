@@ -2,3 +2,4 @@
 
 echo "maven-build.sh"
 
+mvn install
