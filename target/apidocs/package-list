@@ -1,0 +1,4 @@
+com.wowza.cloudsdk.client
+com.wowza.cloudsdk.client.api
+com.wowza.cloudsdk.client.auth
+com.wowza.cloudsdk.client.model

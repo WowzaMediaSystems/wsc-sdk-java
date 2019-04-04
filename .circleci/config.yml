@@ -1,0 +1,42 @@
+version: 2
+
+# The workflows that drive this project
+workflows:
+  version: 2
+
+  development:
+    jobs:
+      - development:
+          context: wsc-sdk-ruby-publish-staging
+          filters:
+            branches:
+              only: /development/
+              
+  master:
+    jobs:
+      - master:
+          context: wsc-sdk-ruby
+          filters:
+            branches:
+              only: /master/
+
+ 
+jobs:
+  development:
+    docker:
+      - image: circleci/openjdk:8u151-jdk-stretch
+    steps:
+      - checkout
+      - run:
+          name: Build job
+          command: ". ./.circleci/jobs/update-development.sh"
+
+  master:
+    docker:
+      - image: circleci/openjdk:8u151-jdk-stretch
+    steps:
+      - checkout
+      - run:
+          name: Build job
+          command: ". ./.circleci/jobs/update-master.sh"
+
