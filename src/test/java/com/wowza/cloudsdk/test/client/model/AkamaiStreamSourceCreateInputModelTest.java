@@ -34,6 +34,6 @@ public class AkamaiStreamSourceCreateInputModelTest {
 	StreamSourceAkamai streamSourceAkamai = new StreamSourceAkamai();
      	streamSourceAkamai.setId("mySetId");
 	modelObject.setStreamSourceAkamai(streamSourceAkamai);
-	assertEquals(modelObject.getStreamSourceAkamai().getId(),"mySetId");
+	assertEquals(modelObject.getStreamSourceAkamai().getId(),"mySetID");
      }
 }
