@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "commit-built-files.sh"
+echo "commit-development-built-files.sh"
 
 git add target/WowzaCloudSDK-java-client-1.3.0.zip
 

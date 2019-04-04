@@ -5,7 +5,7 @@
     <artifactId>WowzaCloudSDK-java-client</artifactId>
     <packaging>jar</packaging>
     <name>WowzaCloudSDK-java-client</name>
-    <version>1.3.0-BUILDEXTENDVERSION</version>
+    <version>BUILDEXTENDVERSION</version>
     <url>https://github.com/WowzaMediaSystems/wsc-sdk-java</url>
     <description>Wowza Streaming Cloud Java SDK</description>
     <scm>
