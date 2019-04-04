@@ -38,5 +38,5 @@ jobs:
       - checkout
       - run:
           name: Build job
-          command: ". ./.circleci/jobs/master.sh"
+          command: ". ./.circleci/jobs/update-master.sh"
 

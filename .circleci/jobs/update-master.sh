@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "update-development.sh"
+echo "update-master.sh"
 
 . ./.circleci/helpers/debundle-context.sh
 
@@ -14,9 +14,7 @@ echo "update-development.sh"
 
 . ./.circleci/helpers/check-test-results.sh
 
-. ./.circleci/helpers/build-release-zip.sh
+. ./.circleci/helpers/publish-documentation.sh
 
-. ./.circleci/helpers/commit-development-built-files.sh
-
-echo "update-development.sh is done!"
+echo "update-master.sh is done!"
 
