@@ -167,7 +167,7 @@ public class PlayersApi {
      * This operation creates a new player URL.
      * @param playerId The unique alphanumeric string that identifies the player. (required)
      * @param url Provide the details of the player URL to create in the body of the request. (required)
-     * @return ApiResponse&lt;Url&gt;
+     * @return ApiResponse&lt;UrlCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UrlCreateInput> createPlayerUrlWithHttpInfo(String playerId, UrlCreateInput url) throws ApiException {
@@ -705,7 +705,7 @@ public class PlayersApi {
      * Rebuild player code
      * This operation rebuilds the player with the current configuration.
      * @param id The unique alphanumeric string that identifies the player. (required)
-     * @return ApiResponse&lt;Player&gt;
+     * @return ApiResponse&lt;PlayerCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PlayerCreateState> requestPlayerRebuildWithHttpInfo(String id) throws ApiException {
@@ -975,7 +975,7 @@ public class PlayersApi {
      * Fetch the state of a player
      * This operation shows the current state of a player.
      * @param id The unique alphanumeric string that identifies the player. (required)
-     * @return ApiResponse&lt;Player&gt;
+     * @return ApiResponse&lt;PlayerCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<PlayerCreateState> showPlayerStateWithHttpInfo(String id) throws ApiException {
@@ -1120,7 +1120,7 @@ public class PlayersApi {
      * This operation shows the details of a player URL.
      * @param playerId The unique alphanumeric string that identifies the player. (required)
      * @param id The unique alphanumeric string that identifies the player URL. (required)
-     * @return ApiResponse&lt;Url&gt;
+     * @return ApiResponse&lt;UrlCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UrlCreateInput> showPlayerUrlWithHttpInfo(String playerId, String id) throws ApiException {
@@ -1424,7 +1424,7 @@ public class PlayersApi {
      * @param playerId The unique alphanumeric string that identifies the player. (required)
      * @param id The unique alphanumeric string that identifies the player URL. (required)
      * @param url Provide the details of the player URL to update in the body of the request. (required)
-     * @return ApiResponse&lt;Url&gt;
+     * @return ApiResponse&lt;UrlCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UrlCreateInput> updatePlayerUrlWithHttpInfo(String playerId, String id, UrlCreateInput url) throws ApiException {

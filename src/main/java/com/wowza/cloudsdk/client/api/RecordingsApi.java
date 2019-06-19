@@ -31,6 +31,7 @@ import java.io.IOException;
 import com.wowza.cloudsdk.client.model.Recording;
 import com.wowza.cloudsdk.client.model.Recordings;
 import com.wowza.cloudsdk.client.model.RecordingCreateState;
+import com.wowza.cloudsdk.client.model.RecordingCreateInput;
 import com.wowza.cloudsdk.client.model.RecordingState;
 import com.wowza.cloudsdk.client.model.IndexRecordings;
 
@@ -388,20 +389,33 @@ public class RecordingsApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public Recording showRecording(String id) throws ApiException {
-        ApiResponse<Recording> resp = showRecordingWithHttpInfo(id);
+        RecordingCreateInput output = showRecordingTransport(id);
+        return output.getRecording();
+    }
+
+    /**
+     * Fetch a recording - Transport Wrapped
+     * This operation shows the details of a specific recording.
+     * @param id The unique alphanumeric string that identifies the recording. (required)
+     * @return RecordingCreateInput
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public RecordingCreateInput showRecordingTransport(String id) throws ApiException {
+        ApiResponse<RecordingCreateInput> resp = showRecordingWithHttpInfo(id);
         return resp.getData();
     }
+
 
     /**
      * Fetch a recording
      * This operation shows the details of a specific recording.
      * @param id The unique alphanumeric string that identifies the recording. (required)
-     * @return ApiResponse&lt;Recording&gt;
+     * @return ApiResponse&lt;RecordingCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Recording> showRecordingWithHttpInfo(String id) throws ApiException {
+    public ApiResponse<RecordingCreateInput> showRecordingWithHttpInfo(String id) throws ApiException {
         com.squareup.okhttp.Call call = showRecordingValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<Recording>(){}.getType();
+        Type localVarReturnType = new TypeToken<RecordingCreateInput>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -413,7 +427,7 @@ public class RecordingsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call showRecordingAsync(String id, final ApiCallback<Recording> callback) throws ApiException {
+    public com.squareup.okhttp.Call showRecordingAsync(String id, final ApiCallback<RecordingCreateInput> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -435,7 +449,7 @@ public class RecordingsApi {
         }
 
         com.squareup.okhttp.Call call = showRecordingValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Recording>(){}.getType();
+        Type localVarReturnType = new TypeToken<RecordingCreateInput>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -531,7 +545,7 @@ public class RecordingsApi {
      * Fetch the state of a recording
      * This operation shows the current state of a recording.
      * @param id The unique alphanumeric string that identifies the recording. (required)
-     * @return ApiResponse&lt;Recording&gt;
+     * @return ApiResponse&lt;RecordingCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<RecordingCreateState> showRecordingStateWithHttpInfo(String id) throws ApiException {

@@ -10,7 +10,7 @@ echo "manage-environment-pom.sh"
 
 pom_location=pom.xml
 
-CURRENT_VERSION=1.3.0
+CURRENT_VERSION=1.3.1
 CURRENT=${CURRENT_VERSION}-$(date +%Y%m%d%H%M%S)
 
 sed -i "s/BUILDEXTENDVERSION/${CURRENT}/" ${pom_location}

@@ -177,7 +177,7 @@ public class StreamTargetsApi {
      * Create a custom stream target
      * (Available from version 1.2) This operation creates a custom stream target for an external, third-party destination.
      * @param streamTargetCustom Provide the details of the custom stream target to create in the body of the request. (required)
-     * @return ApiResponse&lt;StreamTargetCustom&gt;
+     * @return ApiResponse&lt;CustomStreamTargetInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CustomStreamTargetInput> createCustomStreamTargetWithHttpInfo(CustomStreamTargetCreateInput streamTargetCustom) throws ApiException {
@@ -445,7 +445,7 @@ public class StreamTargetsApi {
      * This operation allows you to block or whitelist viewing of a stream target by geographic location. Only Wowza stream targets can be geo-blocked. For more information see &lt;a href&#x3D;&#39;https://www.wowza.com/docs/how-to-geo-block-stream-targets-by-using-the-wowza-streaming-cloud-rest-api&#39; target&#x3D;&#39;_blank&#39;&gt;Geo-block stream targets with the Wowza Streaming Cloud REST API&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt;**Important:** After configuring geo-blocking, you must [contact Support](https://www.wowza.com/portal/help) in order for your changes to take effect.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param geoblock Provide the details of the geo-blocking to create in the body of the request. (required)
-     * @return ApiResponse&lt;Geoblock&gt;
+     * @return ApiResponse&lt;GeoblockCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GeoblockCreateInput> createStreamTargetGeoblockWithHttpInfo(String streamTargetId, GeoblockCreateInput geoblock) throws ApiException {
@@ -593,7 +593,7 @@ public class StreamTargetsApi {
      * This operation configures a property for a stream target. Properties are available for a custom stream target or Wowza stream target whose &lt;em&gt;provider&lt;/em&gt; is &lt;strong&gt;akamai_cupertino&lt;/strong&gt;. For more information see &lt;a href&#x3D;&#39;https://www.wowza.com/docs/how-to-set-advanced-properties-by-using-the-wowza-streaming-cloud-rest-api&#39; target&#x3D;&#39;_blank&#39;&gt;Set advanced properties with the Wowza Streaming Cloud REST API&lt;/a&gt;.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param property Provide the details of the property to configure in the body of the request. (required)
-     * @return ApiResponse&lt;StreamTargetProperty&gt;
+     * @return ApiResponse&lt;StreamTargetPropertyCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<StreamTargetPropertyCreateInput> createStreamTargetPropertyWithHttpInfo(String streamTargetId, StreamTargetPropertyCreateInput property) throws ApiException {
@@ -740,7 +740,7 @@ public class StreamTargetsApi {
      * This operation creates token authorization for a stream target. Only Wowza stream targets can use token authorization. For more information see &lt;a href&#x3D;&#39;https://www.wowza.com/docs/how-to-protect-streams-with-token-authorization-by-using-the-wowza-streaming-cloud-rest-api&#39; target&#x3D;&#39;_blank&#39;&gt;Protect stream targets with token authorization using the Wowza Streaming Cloud REST API&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt;**Important:** After creating token authorization, you must [contact Support](https://www.wowza.com/portal/help) in order for your changes to take effect.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param tokenAuth Provide the details of the token authorization to create in the body of the request. (required)
-     * @return ApiResponse&lt;TokenAuth&gt;
+     * @return ApiResponse&lt;TokenAuthCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TokenAuthCreateInput> createStreamTargetTokenAuthWithHttpInfo(String streamTargetId, TokenAuthCreateInput tokenAuth) throws ApiException {
@@ -878,7 +878,7 @@ public class StreamTargetsApi {
      * Create an ultra low latency stream target
      * (Available from version 1.2) This operation creates an ultra low latency stream target.&lt;br /&gt;&lt;br /&gt;Ultra low latency stream targets are available through subscription to &lt;a href&#x3D;&#39;https://www.wowza.com/products/streaming-cloud#ultra-low-latency&#39; target&#x3D;&#39;_blank&#39;&gt;Wowza Streaming Cloud with Ultra Low Latency&lt;/a&gt;.
      * @param streamTargetUll Provide the details of the ultra low latency stream target to create in the body of the request. (required)
-     * @return ApiResponse&lt;StreamTargetUll&gt;
+     * @return ApiResponse&lt;UllStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UllStreamTargetCreateInput> createUllStreamTargetWithHttpInfo(UllStreamTargetCreateInput streamTargetUll) throws ApiException {
@@ -1014,7 +1014,7 @@ public class StreamTargetsApi {
      * Create a Wowza stream target
      * (Available from version 1.2) This operation creates a Wowza stream target for a Wowza CDN.
      * @param streamTargetWowza Provide the details of the Wowza stream target to create in the body of the request. (required)
-     * @return ApiResponse&lt;StreamTargetWowza&gt;
+     * @return ApiResponse&lt;WowzaStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<WowzaStreamTargetCreateInput> createWowzaStreamTargetWithHttpInfo(WowzaStreamTargetCreateInput streamTargetWowza) throws ApiException {
@@ -2441,7 +2441,7 @@ public class StreamTargetsApi {
      * Regenerate the connection code for any stream target
      * This operation regenerates the connection code of any kind of stream target.
      * @param id The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;StreamTargetConnectioncode&gt;
+     * @return ApiResponse&lt;StreamTargetCreateConnectioncode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<StreamTargetCreateConnectioncode> regenerateConnectionCodeStreamTargetWithHttpInfo(String id) throws ApiException {
@@ -2576,7 +2576,7 @@ public class StreamTargetsApi {
      * Fetch a custom stream target
      * (Available from version 1.2) This operation shows the details of a specific custom stream target.
      * @param id The unique alphanumeric string that identifies the custom stream target. (required)
-     * @return ApiResponse&lt;StreamTargetCustom&gt;
+     * @return ApiResponse&lt;CustomStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CustomStreamTargetCreateInput> showCustomStreamTargetWithHttpInfo(String id) throws ApiException {
@@ -2834,7 +2834,7 @@ public class StreamTargetsApi {
      * Fetch geo-blocking for a Wowza stream target
      * This operation shows the details of geo-blocking applied to a specific stream target. Only Wowza stream targets can be geo-blocked.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;Geoblock&gt;
+     * @return ApiResponse&lt;GeoblockCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GeoblockCreateInput> showStreamTargetGeoblockWithHttpInfo(String streamTargetId) throws ApiException {
@@ -3243,7 +3243,7 @@ public class StreamTargetsApi {
      * This operation shows the details of a specific property assigned to a specific stream target. Properties can be applied to a custom stream target or Wowza stream target whose &lt;em&gt;provider&lt;/em&gt; is &lt;strong&gt;akamai_cupertino&lt;/strong&gt;.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param id The unique string that identifies the stream target property. The string contains the &lt;em&gt;section&lt;/em&gt; and the &lt;em&gt;key&lt;/em&gt;, connected by a dash. For example, &lt;strong&gt;hls-chunkSize&lt;/strong&gt;. (required)
-     * @return ApiResponse&lt;StreamTargetProperty&gt;
+     * @return ApiResponse&lt;StreamTargetPropertyCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<StreamTargetPropertyCreateInput> showStreamTargetPropertyWithHttpInfo(String streamTargetId, String id) throws ApiException {
@@ -3379,7 +3379,7 @@ public class StreamTargetsApi {
      * Fetch token authorization for a Wowza stream target
      * This operation shows the details of the token authorization applied to a stream target. Only Wowza stream targets can use token authorization.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;TokenAuth&gt;
+     * @return ApiResponse&lt;TokenAuthCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TokenAuthCreateInput> showStreamTargetTokenAuthWithHttpInfo(String streamTargetId) throws ApiException {
@@ -3514,7 +3514,7 @@ public class StreamTargetsApi {
      * Fetch an ultra low latency stream target
      * (Available from version 1.2) This operation shows the details of a specific ultra low latency stream target.&lt;br /&gt;&lt;br /&gt;Ultra low latency stream targets are available through subscription to &lt;a href&#x3D;&#39;https://www.wowza.com/products/streaming-cloud#ultra-low-latency&#39; target&#x3D;&#39;_blank&#39;&gt;Wowza Streaming Cloud with Ultra Low Latency&lt;/a&gt;.
      * @param id The unique alphanumeric string that identifies the ultra low latency stream target. (required)
-     * @return ApiResponse&lt;StreamTargetUll&gt;
+     * @return ApiResponse&lt;UllStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UllStreamTargetCreateInput> showUllStreamTargetWithHttpInfo(String id) throws ApiException {
@@ -3649,7 +3649,7 @@ public class StreamTargetsApi {
      * Fetch a Wowza stream target
      * (Available from version 1.2) This operation shows the details of a specific Wowza stream target.
      * @param id The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;StreamTargetWowza&gt;
+     * @return ApiResponse&lt;WowzaStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<WowzaStreamTargetCreateInput> showWowzaStreamTargetWithHttpInfo(String id) throws ApiException {
@@ -3795,7 +3795,7 @@ public class StreamTargetsApi {
      * (Available from version 1.2) This operation updates a custom stream target.
      * @param id The unique alphanumeric string that identifies the custom stream target. (required)
      * @param streamTargetUll Provide the details of the custom stream target to update in the body of the request. (required)
-     * @return ApiResponse&lt;CustomStreamTargetPatchResponse&gt;
+     * @return ApiResponse&lt;CustomStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<CustomStreamTargetCreateInput> updateCustomStreamTargetWithHttpInfo(String id, CustomStreamTargetCreateInput streamTargetUll) throws ApiException {
@@ -4074,7 +4074,7 @@ public class StreamTargetsApi {
      * This operation updates the geo-blocking applied to a stream target. Only Wowza stream targets can be geo-blocked. &lt;br /&gt;&lt;br /&gt;**Important:** After updating geo-blocking, you must [contact Support](https://www.wowza.com/portal/help) in order for your changes to take effect.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param geoblock Provide the details of the geo-blocking to update in the body of the request. (required)
-     * @return ApiResponse&lt;Geoblock&gt;
+     * @return ApiResponse&lt;GeoblockCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GeoblockCreateInput> updateStreamTargetGeoblockWithHttpInfo(String streamTargetId, GeoblockCreateInput geoblock) throws ApiException {
@@ -4222,7 +4222,7 @@ public class StreamTargetsApi {
      * This operation updates the token authorization applied to a stream target. Only Wowza stream targets can use token authorization. &lt;br /&gt;&lt;br /&gt;**Important:** After updating token authorization, you must [contact Support](https://www.wowza.com/portal/help) in order for your changes to take effect.
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param tokenAuth Provide the details of the token authorization to update in the body of the request. (required)
-     * @return ApiResponse&lt;TokenAuth&gt;
+     * @return ApiResponse&lt;TokenAuthCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TokenAuthCreateInput> updateStreamTargetTokenAuthWithHttpInfo(String streamTargetId, TokenAuthCreateInput tokenAuth) throws ApiException {
@@ -4370,7 +4370,7 @@ public class StreamTargetsApi {
      * (Available from version 1.2) This operation updates an ultra low latency stream target.&lt;br /&gt;&lt;br /&gt;Ultra low latency stream targets are available through subscription to &lt;a href&#x3D;&#39;https://www.wowza.com/products/streaming-cloud#ultra-low-latency&#39; target&#x3D;&#39;_blank&#39;&gt;Wowza Streaming Cloud with Ultra Low Latency&lt;/a&gt;.
      * @param id The unique alphanumeric string that identifies the ultra low latency stream target. (required)
      * @param streamTargetUll Provide the details of the ultra low latency stream target to update in the body of the request. (required)
-     * @return ApiResponse&lt;UllStreamTargetPatchResponse&gt;
+     * @return ApiResponse&lt;UllStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<UllStreamTargetCreateInput> updateUllStreamTargetWithHttpInfo(String id, UllStreamTargetCreateInput streamTargetUll) throws ApiException {
@@ -4517,7 +4517,7 @@ public class StreamTargetsApi {
      * (Available from version 1.2) This operation updates a Wowza stream target.
      * @param id The unique alphanumeric string that identifies the stream target. (required)
      * @param streamTargetWowza Provide the details of the Wowza stream target to update in the body of the request. (required)
-     * @return ApiResponse&lt;WowzaStreamTargetPatchResponse&gt;
+     * @return ApiResponse&lt;WowzaStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<WowzaStreamTargetCreateInput> updateWowzaStreamTargetWithHttpInfo(String id, WowzaStreamTargetCreateInput streamTargetWowza) throws ApiException {
