@@ -278,7 +278,7 @@ public class StreamSourcesApi {
      * Create an Akamai stream source
      * (Available from version 1.3) This operation creates an Akamai stream source.  An Akamai stream source is an edge resource that sends a stream to a Wowza Streaming Cloud transcoder using the RTMP protocol. &lt;br /&gt;&lt;br /&gt;&lt;blockquote&gt;**Note:** An Akamai stream source with a *location_method* of **ip_address** requires provisioning time of 15 to 45 minutes. Values for *backup_url*, *primary_url*, *username*, and *password* are available once the stream source is provisioned. We recommend sending GET requests to query for the Akamai stream source no less than five seconds apart.
      * @param streamSourceAkamai Provide the details of the stream source to add in the body of the request.&lt;/blockquote&gt; (required)
-     * @return ApiResponse&lt;StreamSourceAkamai&gt;
+     * @return ApiResponse&lt;AkamaiStreamSourceCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<AkamaiStreamSourceCreateInput> createakamaiStreamSourceWithHttpInfo(AkamaiStreamSourceCreateInput streamSourceAkamai) throws ApiException {
@@ -927,7 +927,7 @@ public class StreamSourcesApi {
      * Fetch an Akamai stream source
      * (Available from version 1.3) This operation shows details of a specific Akamai stream source.  An Akamai stream source is an edge resource that sends a stream to a Wowza Streaming Cloud transcoder using the RTMP protocol.
      * @param id The unique alphanumeric string that identifies the Akamai stream source. (required)
-     * @return ApiResponse&lt;StreamSourceAkamai&gt;
+     * @return ApiResponse&lt;AkamaiStreamSourceCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<AkamaiStreamSourceCreateInput> showAkamaiStreamSourceWithHttpInfo(String id) throws ApiException {
@@ -1196,7 +1196,7 @@ public class StreamSourcesApi {
      * (Available from version 1.3) This operation updates an Akamai stream source.  An Akamai stream source is an edge resource that send a stream to a Wowza Streaming Cloud transcoder using the RTMP protocol.
      * @param id The unique alphanumeric string that identifies the Akamai stream source. (required)
      * @param streamSourceAkamai Provide the details of the stream source to update in the body of the request. (required)
-     * @return ApiResponse&lt;AkamaiStreamSourcePatchResponse&gt;
+     * @return ApiResponse&lt;AkamaiStreamSourceCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<AkamaiStreamSourceCreateInput> updateAkamaiStreamSourceWithHttpInfo(String id, AkamaiStreamSourceCreateInput streamSourceAkamai) throws ApiException {

@@ -57,8 +57,12 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class ApiClient {
 
+    private String apiVersion = "1.3.1";
     private String apiSignaturePath = "/api/v1.3";
     private String basePath = "https://api.cloud.wowza.com"+apiSignaturePath;
+    private String javaVersion = System.getProperty("java.version");
+    private String javaVMName = System.getProperty("java.vm.name");
+    private String osName = System.getProperty("os.name");
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -90,8 +94,16 @@ public class ApiClient {
 
         json = new JSON();
 
-        // Set default User-Agent.
-        setUserAgent("WowzaCloudSDK-java-client/1.3.0/java");
+	// Set default User-Agent.
+        String userAgent = "";
+        userAgent =" {";
+        userAgent+=" \"name\": \"WowzaCloudSDK-java-client\", ";
+        userAgent+=" \"version\": \""+apiVersion+"\", ";
+        userAgent+=" \"platform\": \""+osName+"\", ";
+        userAgent+=" \"engine\": \""+javaVMName+","+javaVersion+"\" ";
+        userAgent+=" }";
+
+	setUserAgent(userAgent);
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, ApiKeyAuth>();

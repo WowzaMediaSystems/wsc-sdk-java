@@ -2571,7 +2571,7 @@ public class TranscodersApi {
      * Fetch transcoder&#39;s schedules
      * This operation shows the details of all of the schedules for a specific transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;Schedules&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Schedules> listTranscoderSchedulesWithHttpInfo(String id) throws ApiException {
@@ -2851,7 +2851,7 @@ public class TranscodersApi {
      * Reset a transcoder
      * This operation resets a transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;TranscoderState&gt;
+     * @return ApiResponse&lt;TranscoderCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateState> resetTranscoderWithHttpInfo(String id) throws ApiException {
@@ -3006,7 +3006,7 @@ public class TranscodersApi {
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param outputId The unique alphanumeric string that identifies the output rendition. (required)
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;StreamTargetState&gt;
+     * @return ApiResponse&lt;StreamTargetCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<StreamTargetCreateState> restartTranscoderOutputOutputStreamTargetWithHttpInfo(String transcoderId, String outputId, String streamTargetId) throws ApiException {
@@ -3143,7 +3143,7 @@ public class TranscodersApi {
      * Fetch a transcoder
      * This operation shows the details of a specific transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;Transcoder&gt;
+     * @return ApiResponse&lt;TranscoderCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateInput> showTranscoderWithHttpInfo(String id) throws ApiException {
@@ -3288,7 +3288,7 @@ public class TranscodersApi {
      * This operation shows the details of a specific output rendition for a specific transcoder.
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param id The unique alphanumeric string that identifies the output rendition. (required)
-     * @return ApiResponse&lt;Output&gt;
+     * @return ApiResponse&lt;OutputCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OutputCreateInput> showTranscoderOutputWithHttpInfo(String transcoderId, String id) throws ApiException {
@@ -3444,7 +3444,7 @@ public class TranscodersApi {
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param outputId The unique alphanumeric string that identifies the output rendition. (required)
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
-     * @return ApiResponse&lt;OutputStreamTarget&gt;
+     * @return ApiResponse&lt;OutputStreamTargetInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OutputStreamTargetInput> showTranscoderOutputOutputStreamTargetWithHttpInfo(String transcoderId, String outputId, String streamTargetId) throws ApiException {
@@ -3591,7 +3591,7 @@ public class TranscodersApi {
      * This operation shows the details of a specific property for a specific transcoder.
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param id The unique string that identifies the transcoder property. The string contains the section and the key, connected by a dash. For example, cupertino-cupertinoProgramDateTimeOffset. (required)
-     * @return ApiResponse&lt;TranscoderProperty&gt;
+     * @return ApiResponse&lt;TranscoderPropertyCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderPropertyCreateInput> showTranscoderPropertyWithHttpInfo(String transcoderId, String id) throws ApiException {
@@ -3727,7 +3727,7 @@ public class TranscodersApi {
      * Fetch the state and uptime ID of a transcoder
      * This operation shows the current state and uptime ID of a transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;TranscoderState&gt;
+     * @return ApiResponse&lt;TranscoderCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateState> showTranscoderStateWithHttpInfo(String id) throws ApiException {
@@ -3862,7 +3862,7 @@ public class TranscodersApi {
      * Fetch statistics for a current transcoder
      * This operation responds with a hash of metrics (keys) for a currently running transcoder. Each key has a &lt;strong&gt;status&lt;/strong&gt;, &lt;strong&gt;text&lt;/strong&gt; (description), &lt;strong&gt;units&lt;/strong&gt;, and &lt;strong&gt;value&lt;/strong&gt;.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;ShmMetrics&gt;
+     * @return ApiResponse&lt;TranscoderCreateShmMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateShmMetrics> showTranscoderStatsWithHttpInfo(String id) throws ApiException {
@@ -3997,7 +3997,7 @@ public class TranscodersApi {
      * Fetch the thumbnail URL of a transcoder
      * This operation shows the thumbnail URL of a started transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;LiveStreamThumbnail&gt;
+     * @return ApiResponse&lt;TranscoderCreateThumbnail&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateThumbnail> showTranscoderThumbnailUrlWithHttpInfo(String id) throws ApiException {
@@ -4142,7 +4142,7 @@ public class TranscodersApi {
      * This operation shows the details of a specific uptime record for a specific transcoder. An &lt;em&gt;uptime record&lt;/em&gt; identifies a transcoding session.
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param id The unique alphanumeric string that identifies the uptime record. (required)
-     * @return ApiResponse&lt;Uptime&gt;
+     * @return ApiResponse&lt;TranscoderCreateUptime&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateUptime> showUptimeWithHttpInfo(String transcoderId, String id) throws ApiException {
@@ -4568,7 +4568,7 @@ public class TranscodersApi {
      * Start a transcoder
      * This operation starts a transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;TranscoderState&gt;
+     * @return ApiResponse&lt;TranscoderCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateState> startTranscoderWithHttpInfo(String id) throws ApiException {
@@ -4703,7 +4703,7 @@ public class TranscodersApi {
      * Stop a transcoder
      * This operation stops a transcoder.
      * @param id The unique alphanumeric string that identifies the transcoder. (required)
-     * @return ApiResponse&lt;TranscoderState&gt;
+     * @return ApiResponse&lt;TranscoderCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<TranscoderCreateState> stopTranscoderWithHttpInfo(String id) throws ApiException {
@@ -4998,7 +4998,7 @@ public class TranscodersApi {
      * @param transcoderId The unique alphanumeric string that identifies the transcoder. (required)
      * @param id The unique alphanumeric string that identifies the output rendition. (required)
      * @param output Provide the details of the output rendition to update in the body of the request. (required)
-     * @return ApiResponse&lt;Output&gt;
+     * @return ApiResponse&lt;OutputCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OutputCreateInput> updateTranscoderOutputWithHttpInfo(String transcoderId, String id, OutputCreateInput output) throws ApiException {
@@ -5165,7 +5165,7 @@ public class TranscodersApi {
      * @param outputId The unique alphanumeric string that identifies the output rendition. (required)
      * @param streamTargetId The unique alphanumeric string that identifies the stream target. (required)
      * @param outputStreamTarget Provide the details of the output stream target to update in the body of the request. (required)
-     * @return ApiResponse&lt;OutputStreamTarget&gt;
+     * @return ApiResponse&lt;OutputStreamTargetCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OutputStreamTargetCreateInput> updateTranscoderOutputOutputStreamTargetWithHttpInfo(String transcoderId, String outputId, String streamTargetId, OutputStreamTargetCreateInput outputStreamTarget) throws ApiException {

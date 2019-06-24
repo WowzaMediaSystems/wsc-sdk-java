@@ -161,7 +161,7 @@ public class LiveStreamsApi {
      * Create a live stream
      * This operation creates a live stream.
      * @param liveStream Provide the details of the live stream to create in the body of the request. (required)
-     * @return ApiResponse&lt;LiveStream&gt;
+     * @return ApiResponse&lt;LiveStreamCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateInput> createLiveStreamWithHttpInfo(LiveStreamCreateInput liveStream) throws ApiException {
@@ -540,7 +540,7 @@ public class LiveStreamsApi {
      * Regenerate the connection code for a live stream
      * This operation regenerates the connection code of a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamConnectioncode&gt;
+     * @return ApiResponse&lt;LiveStreamCreateConnectioncode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateConnectioncode> regenerateConnectionCodeLiveStreamWithHttpInfo(String id) throws ApiException {
@@ -675,7 +675,7 @@ public class LiveStreamsApi {
      * Reset a live stream
      * This operation resets a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamState&gt;
+     * @return ApiResponse&lt;LiveStreamCreateActionState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateActionState> resetLiveStreamWithHttpInfo(String id) throws ApiException {
@@ -811,7 +811,7 @@ public class LiveStreamsApi {
      * Fetch a live stream
      * This operation shows the details of a specific live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStream&gt;
+     * @return ApiResponse&lt;LiveStreamCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateInput> showLiveStreamWithHttpInfo(String id) throws ApiException {
@@ -946,7 +946,7 @@ public class LiveStreamsApi {
      * Fetch the state of a live stream
      * This operation shows the current state of a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamState&gt;
+     * @return ApiResponse&lt;LiveStreamCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateState> showLiveStreamStateWithHttpInfo(String id) throws ApiException {
@@ -1081,7 +1081,7 @@ public class LiveStreamsApi {
      * Fetch metrics for an active live stream
      * This operation returns a hash of metrics keys, each of which identifies a status, text description, unit, and value.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;ShmMetrics&gt;
+     * @return ApiResponse&lt;LiveStreamCreateMetrics&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateMetrics> showLiveStreamStatsWithHttpInfo(String id) throws ApiException {
@@ -1216,7 +1216,7 @@ public class LiveStreamsApi {
      * Fetch the thumbnail URL of a live stream
      * This operation shows the thumbnail URL of a started live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamThumbnail&gt;
+     * @return ApiResponse&lt;LiveStreamCreateThumbnail&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateThumbnail> showLiveStreamThumbnailUrlWithHttpInfo(String id) throws ApiException {
@@ -1351,7 +1351,7 @@ public class LiveStreamsApi {
      * Start a live stream
      * This operation starts a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamState&gt;
+     * @return ApiResponse&lt;LiveStreamCreateActionState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateActionState> startLiveStreamWithHttpInfo(String id) throws ApiException {
@@ -1486,7 +1486,7 @@ public class LiveStreamsApi {
      * Stop a live stream
      * This operation stops a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
-     * @return ApiResponse&lt;LiveStreamState&gt;
+     * @return ApiResponse&lt;LiveStreamCreateActionState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateActionState> stopLiveStreamWithHttpInfo(String id) throws ApiException {
@@ -1632,7 +1632,7 @@ public class LiveStreamsApi {
      * This operation updates a live stream.
      * @param id The unique alphanumeric string that identifies the live stream. (required)
      * @param liveStream Provide the details of the live stream to update in the body of the request. (required)
-     * @return ApiResponse&lt;LiveStream&gt;
+     * @return ApiResponse&lt;LiveStreamCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<LiveStreamCreateInput> updateLiveStreamWithHttpInfo(String id, LiveStreamCreateInput liveStream) throws ApiException {

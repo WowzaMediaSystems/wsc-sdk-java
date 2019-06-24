@@ -152,7 +152,7 @@ public class SchedulesApi {
      * Create a schedule
      * This operation creates a schedule.
      * @param schedule Provide the details of the schedule to create in the body of the request. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateInput> createScheduleWithHttpInfo(ScheduleCreateInput schedule) throws ApiException {
@@ -406,7 +406,7 @@ public class SchedulesApi {
      * Disable a schedule
      * This operation disables a schedule.
      * @param id The unique alphanumeric string that identifies the schedule. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateState> disableScheduleWithHttpInfo(String id) throws ApiException {
@@ -542,7 +542,7 @@ public class SchedulesApi {
      * Enable a schedule
      * This operation enables a schedule.
      * @param id The unique alphanumeric string that identifies the schedule. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateState> enableScheduleWithHttpInfo(String id) throws ApiException {
@@ -815,7 +815,7 @@ public class SchedulesApi {
      * Fetch a schedule
      * This operation shows the details of a specific schedule.
      * @param id The unique alphanumeric string that identifies the schedule. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateInput> showScheduleWithHttpInfo(String id) throws ApiException {
@@ -951,7 +951,7 @@ public class SchedulesApi {
      * Fetch the state of a schedule
      * This operation shows the current state of a schedule.
      * @param id The unique alphanumeric string that identifies the schedule. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateState&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateState> showScheduleStateWithHttpInfo(String id) throws ApiException {
@@ -1097,7 +1097,7 @@ public class SchedulesApi {
      * This operation updates a schedule.
      * @param id The unique alphanumeric string that identifies the schedule. (required)
      * @param schedule Provide the details of the schedule to update in the body of the request. (required)
-     * @return ApiResponse&lt;Schedule&gt;
+     * @return ApiResponse&lt;ScheduleCreateInput&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ScheduleCreateInput> updateScheduleWithHttpInfo(String id, ScheduleCreateInput schedule) throws ApiException {

@@ -141,7 +141,7 @@ public class ViewerDataApi {
     }
 
     /**
-     * Fetch viewer data for a stream target - Transport wrapped
+     * Fetch viewer data for a stream target - Transport Wrapped
      * This operation shows viewer data for a specific stream target. Viewer data provides insight into the number and types of requests that were made to play streams at a target. The default time frame is &lt;em&gt;from&lt;/em&gt; the last billing date &lt;em&gt;to&lt;/em&gt; the end of the current day.&lt;br /&gt;&lt;blockquote&gt;**Note:** Ultra low latency stream targets are available through subscription to &lt;a href&#x3D;&#39;https://www.wowza.com/products/streaming-cloud#ultra-low-latency&#39; target&#x3D;&#39;_blank&#39;&gt;Wowza Streaming Cloud with Ultra Low Latency&lt;/a&gt;. &lt;/blockquote&gt;
      * @param id The unique alphanumeric string that identifies the stream target. (required)
      * @param from The start of the range of time you want to view. Specify &lt;strong&gt;YYYY-MM-DD HH:MM:SS&lt;/strong&gt; where &lt;strong&gt;HH&lt;/strong&gt; is a 24-hour clock in UTC. The &lt;em&gt;from&lt;/em&gt; default is the last billing date. (optional)

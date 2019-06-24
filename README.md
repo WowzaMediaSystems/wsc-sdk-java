@@ -8,7 +8,7 @@ Need the basics? Get to know [Wowza Streaming Cloud](https://www.wowza.com/produ
 
 ### SDK version 
 
-v1.3.0 (references Wowza Streaming Cloud REST API version 1.3)
+v1.3.1 (references Wowza Streaming Cloud REST API version 1.3)
 
 ## Contents
 
@@ -60,7 +60,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.wowza.cloudsdk</groupId>
   <artifactId>WowzaCloudSDK-java-client</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -70,7 +70,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.wowza.cloudsdk:WowzaCloudSDK-java-client:1.3.0"
+compile "com.wowza.cloudsdk:WowzaCloudSDK-java-client:1.3.1"
 ```
 
 ### Others
@@ -83,7 +83,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/WowzaCloudSDK-java-client-1.3.0.jar`
+* `target/WowzaCloudSDK-java-client-1.3.1.jar`
 * `target/lib/*.jar`
 
 ## Get your API key and generate an access key
