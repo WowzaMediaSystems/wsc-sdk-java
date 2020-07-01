@@ -1,3 +1,5 @@
+**Interested in maintaining this SDK? Please respond to [this issue](https://github.com/WowzaMediaSystems/wsc-sdk-java/issues/4) if you'd like to support and developer this SDK moving forward. If not, the next new version of the API making this SDK out of date, we will archive and eventually remove this SDK.**
+
 ![wowza streaming cloud java sdk logo](images/wsc-java-1800x400.png)
 # Wowza Streaming Cloud Java SDK
 
